@@ -53,6 +53,8 @@ n1 <- ggplot(data, aes(x = EDAD, y = POBLACION, fill = SEXO)) +
 
 n1
 ```
+![alt text](https://github.com/LuisPuenteP/PopulationPyramids/blob/master/Code/Mex_pop2050.png "example screenshot")
+
 ### Runnin the Gif with saveGIF
 
 
