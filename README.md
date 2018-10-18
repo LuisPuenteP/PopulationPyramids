@@ -92,7 +92,7 @@ saveGIF({
 
 ```
 
-![alt text](https://github.com/LuisPuenteP/PopulationPyramids/blob/master/Code/animation.gif "example screenshot")
+![alt text](https://github.com/LuisPuenteP/PopulationPyramids/blob/master/Code/Pirámide demográfica de México.gif "example screenshot")
 
 ## Author
 
