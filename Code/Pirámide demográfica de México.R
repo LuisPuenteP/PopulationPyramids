@@ -22,7 +22,7 @@ n1 <- ggplot(data, aes(x = EDAD, y = POBLACION, fill = SEXO)) +
   scale_y_continuous(limits =c (-1.2,1.2), breaks = seq(-1.2, 1.2, .2), 
                      labels = paste0(as.character(c(seq(1.2, 0, -.2), seq(.2, 1.2, .2))), "m")) + 
   coord_flip() + 
-  theme_bw(base_size = 9) +
+  theme_bw(base_size = 7) +
   scale_fill_manual(values = c("blue", "red")) +
   labs(x = "Edad", y = "Millones de personas",
        title = "Pirámide poblacional de México: 1950-2050",

@@ -90,7 +90,7 @@ saveGIF({
 }, movie.name = 'piramide_mex.gif', interval = 0.1, ani.width = 700, ani.height = 600)
 ```
 
-![alt text](https://github.com/LuisPuenteP/PopulationPyramids/blob/master/Code/piramide_mex.gif "example")
+![alt text](https://github.com/LuisPuenteP/PopulationPyramids/blob/master/Code/piramide_mex.gif "Example")
 
 ## Author
 
