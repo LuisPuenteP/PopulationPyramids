@@ -6,9 +6,9 @@ Mexico's ageing population, animated with R using saveGIF
 
 Data from CONAPO.
 
-Population at mid-year for the period 1950-2050 [CONAPO] (http://www.conapo.gob.mx/work/models/CONAPO/Datos_Abiertos/Proyecciones2018/pob_mit_proyecciones.csv)
+Population at mid-year for the period 1950-2050 ![CONAPO] (http://www.conapo.gob.mx/work/models/CONAPO/Datos_Abiertos/Proyecciones2018/pob_mit_proyecciones.csv)
 
-For more details [here] (https://www.gob.mx/conapo/acciones-y-programas/conciliacion-demografica-de-mexico-1950-2015-y-proyecciones-de-la-poblacion-de-mexico-y-de-las-entidades-federativas-2016-2050)
+For more details ![here] (https://www.gob.mx/conapo/acciones-y-programas/conciliacion-demografica-de-mexico-1950-2015-y-proyecciones-de-la-poblacion-de-mexico-y-de-las-entidades-federativas-2016-2050)
 
 
 ### Prerequisites
@@ -54,6 +54,7 @@ n1 <- ggplot(data, aes(x = EDAD, y = POBLACION, fill = SEXO)) +
 n1
 ```
 ![alt text](https://github.com/LuisPuenteP/PopulationPyramids/blob/master/Code/Mex_pop2050.png "example screenshot")
+
 
 ### Runnin the Gif with saveGIF
 
