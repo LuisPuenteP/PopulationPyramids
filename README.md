@@ -10,6 +10,11 @@ Population at mid-year for the period 1950-2050.
 
 http://www.conapo.gob.mx/work/models/CONAPO/Datos_Abiertos/Proyecciones2018/pob_mit_proyecciones.csv
 
+For more details:
+
+https://www.gob.mx/conapo/acciones-y-programas/conciliacion-demografica-de-mexico-1950-2015-y-proyecciones-de-la-poblacion-de-mexico-y-de-las-entidades-federativas-2016-2050
+
+
 ### Prerequisites
 
 ```
