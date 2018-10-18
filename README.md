@@ -1,14 +1,14 @@
-# PopulationPyramids
+# Population pyramids
 Mexico's ageing population, animated with R using saveGIF
 
 
 ## Data 
 
-Data from CONAPO.
+Data from CONAPO. [CONAPO](http://www.conapo.gob.mx/work/models/CONAPO/Datos_Abiertos/Proyecciones2018/pob_mit_proyecciones.csv)
 
-Population at mid-year for the period 1950-2050 [CONAPO](http://www.conapo.gob.mx/work/models/CONAPO/Datos_Abiertos/Proyecciones2018/pob_mit_proyecciones.csv)
+Population at mid-year for the period 1950-2050 
 
-For more details [here](https://www.gob.mx/conapo/acciones-y-programas/conciliacion-demografica-de-mexico-1950-2015-y-proyecciones-de-la-poblacion-de-mexico-y-de-las-entidades-federativas-2016-2050)
+Tecnical details [here](https://www.gob.mx/conapo/acciones-y-programas/conciliacion-demografica-de-mexico-1950-2015-y-proyecciones-de-la-poblacion-de-mexico-y-de-las-entidades-federativas-2016-2050)
 
 
 ### Prerequisites
@@ -51,7 +51,7 @@ n1 <- ggplot(data, aes(x = EDAD, y = POBLACION, fill = SEXO)) +
        subtitle = title,
        caption = "Fuente: CONAPO. \n  GitHub: LuisPuenteP") 
 
-n1
+print(n1)
 ```
 ![alt text](https://github.com/LuisPuenteP/PopulationPyramids/blob/master/Code/Mex_pop2050.png "example screenshot")
 
@@ -60,7 +60,6 @@ n1
 
 
 ```
-
 
 saveGIF({
   
@@ -81,15 +80,13 @@ saveGIF({
       labs(x = "Edad", y = "Millones de personas",
            title = "Pirámide poblacional de México: 1950-2050",
            subtitle = title,
-           caption = "Fuente: CONAPO. \n GitHub: LuisPuenteP")
-      
+           caption = "Datos de CONAPO. \n GitHub: LuisPuenteP \n Twitter:@LuisPuenteP")
     
     print(n1)
     
   }
   
 }, movie.name = 'piramide_mex.gif', interval = 0.1, ani.width = 700, ani.height = 600)
-
 ```
 
 ![alt text](https://github.com/LuisPuenteP/PopulationPyramids/blob/master/Code/piramide_mex.gif "example screenshot")

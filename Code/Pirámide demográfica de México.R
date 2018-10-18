@@ -7,14 +7,11 @@ library(dplyr)
 library(ggthemes)
 library(readr)
 
-pop_mex  <- read_csv("http://www.conapo.gob.mx/work/models/CONAPO/Datos_Abiertos/Proyecciones2018/pob_ini_proyecciones.csv", local = locale(encoding = "latin1"))
-
+getwd()
+pop_mex  <- read_csv("pob_ini_proyecciones.csv", local = locale(encoding = "latin1"))
 pop_mex$POBLACION[pop_mex$SEXO == "Hombres"] <- -pop_mex$POBLACION[pop_mex$SEXO == "Hombres"]
-
 pop_mex$POBLACION <- pop_mex$POBLACION/1000000
-
 head(pop_mex)
-
 pop_mex = subset(pop_mex, ENTIDAD == "República Mexicana")
 
 data = subset(pop_mex, AÑO == 2050)
@@ -25,16 +22,15 @@ n1 <- ggplot(data, aes(x = EDAD, y = POBLACION, fill = SEXO)) +
   scale_y_continuous(limits =c (-1.2,1.2), breaks = seq(-1.2, 1.2, .2), 
                      labels = paste0(as.character(c(seq(1.2, 0, -.2), seq(.2, 1.2, .2))), "m")) + 
   coord_flip() + 
-  theme_bw(base_size = 4) +
+  theme_bw(base_size = 9) +
   scale_fill_manual(values = c("blue", "red")) +
   labs(x = "Edad", y = "Millones de personas",
-       title = "Pirámide poblacional de México: 1950",
+       title = "Pirámide poblacional de México: 1950-2050",
        subtitle = title,
-       caption = "Fuente: CONAPO. \n GitHub: LuisPuenteP")
+       caption = "Datos de CONAPO. \n GitHub: LuisPuenteP \n Twitter:@LuisPuenteP")
 
-n1
-ggsave("Code/Mex_pop2050.png")
-
+print(n1)
+ggsave("Mex_pop2050.png")
 
 saveGIF({
   
@@ -55,8 +51,7 @@ saveGIF({
       labs(x = "Edad", y = "Millones de personas",
            title = "Pirámide poblacional de México: 1950-2050",
            subtitle = title,
-           caption = "Fuente: CONAPO. \n GitHub: LuisPuenteP")
-    
+           caption = "Datos de CONAPO. \n GitHub: LuisPuenteP \n Twitter:@LuisPuenteP")
     
     print(n1)
     
