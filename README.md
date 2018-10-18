@@ -1,5 +1,5 @@
 # PopulationPyramids
-Mexico's ageing population, animated with R
+Mexico's ageing population, animated with R using saveGIF
 
 
 ## Data 
@@ -20,83 +20,75 @@ library(dplyr)
 library(ggthemes)
 ```
 
-### Preparing the data
+### Prepare the data
 
 pop_mex  <- read_csv("http://www.conapo.gob.mx/work/models/CONAPO/Datos_Abiertos/Proyecciones2018/pob_mit_proyecciones.csv"))
 
-
+```
 pop_mex$POBLACION[pop_mex$SEXO == "Hombres"] <- -pop_mex$POBLACION[pop_mex$SEXO == "Hombres"]
 
 pop_mex$POBLACION <- pop_mex$POBLACION/1000000
 
 pop_mex = subset(pop_mex, ENTIDAD == "República Mexicana")
 
-A step by step series of examples that tell you how to get a development env running
-
-Say what the step will be
-
-```
-Give the example
 ```
 
-And repeat
+## Running a single year
+
+data = subset(pop_mex, AÑO == 2050)
+
+n1 <- ggplot(data, aes(x = EDAD, y = POBLACION, fill = SEXO)) + 
+  geom_bar(aes(fill=SEXO), stat = "identity", width = 1) + 
+  geom_bar(aes(fill=SEXO), stat = "identity", width = 1) + 
+  scale_y_continuous(limits =c (-1.2,1.2), breaks = seq(-1.2, 1.2, .2), 
+                     labels = paste0(as.character(c(seq(1.2, 0, -.2), seq(.2, 1.2, .2))), "m")) + 
+  coord_flip() + 
+  theme_bw(base_size = 13) +
+  scale_fill_manual(values = c("blue", "red")) +
+  labs(x = "Edad", y = "Millones de personas",
+       title = "Pirámide poblacional de México: 1950-2050",
+       subtitle = title,
+       caption = "Fuente: CONAPO. \n  GitHub: LuisPuenteP") 
+
+n1
+
+### Runnin the Gif with saveGIF
+
 
 ```
-until finished
+
+
+saveGIF({
+  
+  for (i in 1950:2050) {
+    
+    title <- as.character(i)
+    
+    year_data <- filter(pop_mex, AÑO == i)
+    
+    n1 <- ggplot(year_data, aes(x = EDAD, y = POBLACION, fill = SEXO)) + 
+      geom_bar(aes(fill=SEXO), stat = "identity", width = 1) + 
+      geom_bar(aes(fill=SEXO), stat = "identity", width = 1) + 
+      scale_y_continuous(limits =c (-1.2,1.2), breaks = seq(-1.2, 1.2, .2), 
+                         labels = paste0(as.character(c(seq(1.2, 0, -.2), seq(.2, 1.2, .2))), "m")) + 
+      coord_flip() + 
+      theme_bw(base_size = 17) +
+      scale_fill_manual(values = c("blue", "red")) +
+      labs(x = "Edad", y = "Millones de personas",
+           title = "Pirámide poblacional de México: 1950-2050",
+           subtitle = title,
+           caption = "Fuente: CONAPO. \n GitHub: LuisPuenteP")
+      
+    
+    print(n1)
+    
+  }
+  
+}, movie.name = 'piramide_mex.gif', interval = 0.1, ani.width = 700, ani.height = 600)
+
 ```
 
-End with an example of getting some data out of the system or using it for a little demo
+## Author
 
-## Running the tests
+* **Luis Puente** 
 
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-## Deployment
-
-Add additional notes about how to deploy this on a live system
-
-## Built With
-
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
-
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
-
-## Authors
-
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
-## Acknowledgments
-
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
