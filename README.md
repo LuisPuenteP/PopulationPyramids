@@ -22,9 +22,9 @@ library(ggthemes)
 
 ### Prepare the data
 
+```
 pop_mex  <- read_csv("http://www.conapo.gob.mx/work/models/CONAPO/Datos_Abiertos/Proyecciones2018/pob_mit_proyecciones.csv"))
 
-```
 pop_mex$POBLACION[pop_mex$SEXO == "Hombres"] <- -pop_mex$POBLACION[pop_mex$SEXO == "Hombres"]
 
 pop_mex$POBLACION <- pop_mex$POBLACION/1000000
@@ -34,7 +34,7 @@ pop_mex = subset(pop_mex, ENTIDAD == "República Mexicana")
 ```
 
 ## Running a single year
-
+```
 data = subset(pop_mex, AÑO == 2050)
 
 n1 <- ggplot(data, aes(x = EDAD, y = POBLACION, fill = SEXO)) + 
@@ -51,7 +51,7 @@ n1 <- ggplot(data, aes(x = EDAD, y = POBLACION, fill = SEXO)) +
        caption = "Fuente: CONAPO. \n  GitHub: LuisPuenteP") 
 
 n1
-
+```
 ### Runnin the Gif with saveGIF
 
 
