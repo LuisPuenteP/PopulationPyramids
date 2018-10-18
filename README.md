@@ -53,7 +53,7 @@ n1 <- ggplot(data, aes(x = EDAD, y = POBLACION, fill = SEXO)) +
 
 print(n1)
 ```
-![alt text](https://github.com/LuisPuenteP/PopulationPyramids/blob/master/Code/Mex_pop2050.png "example screenshot")
+![alt text](https://github.com/LuisPuenteP/PopulationPyramids/blob/master/Code/Mex_pop2050.png "example")
 
 
 ### Runnin the Gif with saveGIF
@@ -89,7 +89,7 @@ saveGIF({
 }, movie.name = 'piramide_mex.gif', interval = 0.1, ani.width = 700, ani.height = 600)
 ```
 
-![alt text](https://github.com/LuisPuenteP/PopulationPyramids/blob/master/Code/piramide_mex.gif "example screenshot")
+![alt text](https://github.com/LuisPuenteP/PopulationPyramids/blob/master/Code/piramide_mex.gif "example")
 
 ## Author
 
