@@ -92,7 +92,7 @@ saveGIF({
 
 ```
 
-![alt text](https://github.com/LuisPuenteP/PopulationPyramids/blob/master/Code/piramide_mex.gif.gif "example screenshot")
+![alt text](https://github.com/LuisPuenteP/PopulationPyramids/blob/master/Code/piramide_mex.gif "example screenshot")
 
 ## Author
 
