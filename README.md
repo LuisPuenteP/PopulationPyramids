@@ -89,6 +89,8 @@ saveGIF({
 
 ```
 
+![alt text](https://github.com/LuisPuenteP/PopulationPyramids/blob/master/Code/animation.gif "example screenshot")
+
 ## Author
 
 * **Luis Puente** 
