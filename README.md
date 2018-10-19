@@ -92,6 +92,9 @@ saveGIF({
 
 ![alt text](https://github.com/LuisPuenteP/PopulationPyramids/blob/master/Code/piramide_mex.gif "Example")
 
+## Notes
+This code was adapted for the case of Mexico. The original code is for Japan, you can check this excellent [blog](http://blog.revolutionanalytics.com/2016/02/japans-ageing-population-animated-with-r.html).
+
 ## Author
 
 * **Luis Puente** 
